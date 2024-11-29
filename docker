@@ -1,0 +1,13 @@
+#Docker Architecture 
+The Docker client server architecture provides a complete application environment. Docker components include the client, the host, and the registry. 
+  Let's take a high level view of how docker works. First, you'll use either the Docker command line interface or REST APIs via the Docker client to 
+  send instructions to the Docker host server, commonly called the host. The Docker host contains the daemon known as dockered. 
+  The daemon listens for Docker API requests or commands such as docker run, and processes those commands. The daemon does the heavy lifting to build, 
+run, and distribute docker containers. Then, Docker stores the container images in a registry. The Docker host also includes and manages images, containers,
+namespace networks, storage plugins, and add-ons. You can use the Docker client to communicate with local and remote docker hosts. You can run the Docker
+  client and daemon on the same system or connect your docker client to a remote Docker daemon, and Docker daemons can also communicate with other daemons 
+  to manage docker services. Docker stores and distributes images in a registry. Registry access is either public, such as Docker hub, which is accessible 
+  by everyone, or private. Enterprises usually opt to use a private registry for security reasons. And registry locations are hosted using a third-party 
+    provider such as IBM Cloud container registry, or self-hosted in private data centers or on the cloud. Next, let's learn about moving images into 
+    the registry. First, developers build and push the images using automation or a build pipeline into a registry where Docker stores these images. 
+      Then, local machines, cloud systems, and on premises systems can pull those images. 
